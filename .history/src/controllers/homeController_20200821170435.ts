@@ -1,5 +1,5 @@
 import HomeModel from '../models/homeModel';
-import {postBody} from '../common/utils'
+import {postBody} from '../public/utils'
 
 export default class HomeController{
   static getHome(req, res, next){
@@ -19,9 +19,9 @@ export default class HomeController{
     newRecomend.save((err) =>{
       console.log("post newRecomend")
       if(err){
-        res.redirect('/submitResult?result=创建需求失败');
+        res.render('submitResult',{result: '创建需求失败'})
       } else{
-        res.redirect('/submitResult?result=创建需求成功');
+        res.render('submitResult',{result: '创建需求成功'})
       }
     })
   }

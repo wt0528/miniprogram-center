@@ -2,7 +2,6 @@ import express from 'express';
 import homeController from '../controllers/homeController'; 
 import packageBuildController from '../controllers/packageBuildController'; 
 import demandManageController from '../controllers/demandManageController'; 
-import submitResultController from '../controllers/submitResultController'; 
 
 const router = express.Router();
 
@@ -21,8 +20,6 @@ router.post('/packageBuild', packageBuildController.postPackageBuild);
 router.get('/demandmanage', demandManageController.getDemandManage);  
 
 router.post('/demandmanage', demandManageController.postDemandManage);  
-
-router.get('/submitResult', submitResultController.getSubmitResult);  
 
 
 export default router;

@@ -9,7 +9,7 @@ export default class PackageBuildController{
     static async postPackageBuild(req, res, next){
         let body:any = await postBody(req)
         console.log("body",body)
-        res.redirect('/submitResult?result=打包成功');
+        res.render('submitResult',{result: '打包成功'})
     }
     
 }
