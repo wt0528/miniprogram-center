@@ -17,17 +17,17 @@
                  </select> 
                  <br>
                  
-        选择平台: <input name="platform" value="wxPlugin" type="radio" onclick='showSecondPlatform(this, "wxPlugin")' checked/>微信插件
+        选择平台: <input name="platform" value="wxPlugin" type="radio" onclick='showSecondPlatform(this, "wxPlugin")'/>微信插件
                  <input name="platform" value="baidu" type="radio" onclick='showSecondPlatform(this, "baidu")'/>安居客百度
                  <input name="platform" value="fangchan" type="radio" onclick='showSecondPlatform(this, "fangchan")'/>58房产
                  <input name="platform" value="alipay" type="radio" onclick='showSecondPlatform(this, "alipay")'/>安居客支付宝 <br>
                  
-                 <block id="ajk58">
-                    <input name="secondPlatform" value="wb" type="radio" checked/>58
+                 <block id="ajk58" style="display: none;">
+                    <input name="secondPlatform" value="wb" type="radio"/>58
                     <input name="secondPlatform" value="ajk" type="radio"/>ajk
                  </block>
                 
-                 <block id="zfBussiness" style="display: none;">
+                 <block id="zfBussiness">
                     <input name="secondPlatform" value="zufang" type="radio"/>租房
                     <input name="secondPlatform" value="bussiness" type="radio"/>商业地产
                  </block>
