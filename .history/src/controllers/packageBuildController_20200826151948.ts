@@ -13,9 +13,6 @@ export default class PackageBuildController{
         let body:any = await postBody(req)
         console.log("buildBody",body)
         //TODO: 执行打包操作
-        
-
-
         res.redirect('/submitResult?result=打包成功');
     }
     

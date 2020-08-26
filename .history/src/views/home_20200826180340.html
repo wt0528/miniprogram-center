@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<link>
+    <meta charset="UTF-8">
+    <title>mini-program</title>
+    <link rel="stylesheet" type="text/css" href="style/navLayout.css"/>
+    <script type="text/javascript" src="script/navLayout.js"></script>
+</head>
+<body>
+    <form method="post">
+        输入需求名称: <input type="text" name="demandName" required><br>
+        输入需求待创建分支号: <input type="text" name="demandGitNum" required><br>
+        <input name="haveBaidu" type="checkbox" value="baidu" onclick='showBaiDuCreate(this)'/>需求同步至百度<br>
+        <block id="bdNum" style="display: none;">
+            回填icode创建的百度分支号： <input id="bdNumInput" type="text" name="bdGitNum"><br>
+        </block>
+        <button type="submit">确定</button>
+    </form>
+</body>
+<script>
+    function showBaiDuCreate(that){
+        if(that.checked){
+            document.getElementById("bdNum").style.display = ''
+            document.getElementById("bdNumInput").required = true
+        } else{
+            document.getElementById("bdNum").style.display = 'none'
+            document.getElementById("bdNumInput").required = false
+        }
+    }
+</script>
+</html>

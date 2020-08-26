@@ -19,7 +19,6 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 
 /** 设置模板 */
-app.use(express.static(path.join(__dirname , './src/public')));
 app.set('views', path.join(__dirname, './src/views'));
 app.engine('html', require('ejs').__express); 
 app.set('view engine', 'html');
