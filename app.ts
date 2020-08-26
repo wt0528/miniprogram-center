@@ -11,7 +11,7 @@ var app = express();
 var mongoose = require('mongoose');
 var dev_db_url = 'mongodb+srv://cooluser:coolpassword@cluster0-mbdj7.mongodb.net/mini_program?retryWrites=true'
 //var mongoDB = process.env.MONGODB_URI || dev_db_url;
-var mongoDB = 'mongodb://localhost:28018/mini_program' || dev_db_url;
+var mongoDB = 'mongodb://127.0.0.1:27017/mini_program' || dev_db_url;
 mongoose.connect(mongoDB, { useNewUrlParser: true });
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
