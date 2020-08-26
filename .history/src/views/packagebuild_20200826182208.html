@@ -5,7 +5,7 @@
     <title>mini-program</title>
 </head>
 <body>
-    <form method="post" class="content">
+    <form method="post">
         打包类型:  <input type="radio" name="buildType" value="forTest" checked>测试
                   <input type="radio" name="buildType" value="forOnline">上线 
                   <br>
@@ -23,13 +23,13 @@
                  <input name="platform" value="alipay" type="radio" onclick='showSecondPlatform(this, "alipay")'/>安居客支付宝 <br>
                  
                  <block id="ajk58">
-                    <input name="wbOrAjk" value="wb" type="radio" checked/>58
-                    <input name="wbOrAjk" value="ajk" type="radio"/>ajk
+                    <input name="secondPlatform" value="wb" type="radio" checked/>58
+                    <input name="secondPlatform" value="ajk" type="radio"/>ajk
                  </block>
                 
                  <block id="zfBussiness" style="display: none;">
-                    <input name="zfOrBussiness" value="zufang" type="radio"/>租房
-                    <input name="zfOrBussiness" value="bussiness" type="radio"/>商业地产
+                    <input name="secondPlatform" value="zufang" type="radio" checked/>租房
+                    <input name="secondPlatform" value="bussiness" type="radio"/>商业地产
                  </block>
                  <br>
                 
