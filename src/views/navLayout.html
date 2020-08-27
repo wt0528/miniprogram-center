@@ -1,24 +1,25 @@
 <!DOCTYPE html>
-　　<html>
-　　<head>
-　　　　<title></title>
-       <link rel="stylesheet" type="text/css" href="style/navLayout.css"/>
-       <script type="text/javascript" src="script/navLayout.js"></script>
+　　 <html>
+　　 <head>
+　　　　 <title></title>
+        <link rel="stylesheet" type="text/css" href="style/navLayout.css"/>
+        <script type="text/javascript" src="script/navLayout.js"></script>
 　　</head>
-　　<body>
+　　 <body>
         <div class="container">
             <ul class="nav-ul">
                 <li>
-                    <a href='/home'>新建需求</a>
+                    <a href='/home' onclick="jump('home')">新建需求</a>
                 </li>
                 <li>
-                    <a href='/packagebuild'>打包项目</a>
+                    <a href='/packagebuild' onclick="jump('packagebuild')">打包项目</a>
                 </li>
                 <li>
-                    <a href='/demandmanage'>需求管理</a>
+                    <a href='/demandmanage' onclick="jump('demandmanage')">需求管理</a>
                 </li>
             </ul>
         　　<%-body%>
        </div>
-　　</body>
-　　</html>
+　　 </body>
+    <script type="text/javascript" src="script/navLayout.js"></script>
+　　 </html>
