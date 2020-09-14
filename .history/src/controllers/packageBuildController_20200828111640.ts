@@ -14,7 +14,7 @@ export default class PackageBuildController{
         let body:any = await postBody(req)
         console.log("buildBody",body)
         //TODO: 执行打包操作
-        process.exec('ls ', function(error, stdout, stderr){
+        process.exec('git log', function(error, stdout, stderr){
             if(error) {
                 console.error('error: ' + error);
                 return;

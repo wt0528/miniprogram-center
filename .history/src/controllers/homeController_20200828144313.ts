@@ -28,8 +28,12 @@ export default class HomeController{
     //   }
     // })
 
-    shelljs.echo('hello world');
-    shelljs.cd("../")
-    
+    process.execFile('new_create.sh',function (err, stdout, stderr) {
+      if(err){
+        console.log("err",err)
+      }
+      console.log("stdout",stdout)
+      console.log("stderr",stderr)
+    });
   }
 }

@@ -1,6 +1,5 @@
 import DemandModel from '../models/demandModel';
 import OperateLogModel from '../models/operateLogModel';
-import UserModel from '../models/userModel';
 import {postBody} from '../common/utils'
 
 export default class DemandManageController{

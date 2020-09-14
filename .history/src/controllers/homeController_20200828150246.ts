@@ -29,7 +29,6 @@ export default class HomeController{
     // })
 
     shelljs.echo('hello world');
-    shelljs.cd("../")
-    
+    shelljs.cd("/D/Projects/wx_bd_kyy/taroProject/wuba-weapp")
   }
 }

@@ -28,8 +28,6 @@ export default class HomeController{
     //   }
     // })
 
-    shelljs.echo('hello world');
-    shelljs.cd("../")
     
   }
 }

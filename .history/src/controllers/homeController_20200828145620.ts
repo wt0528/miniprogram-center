@@ -1,7 +1,7 @@
 import DemandModel from '../models/demandModel';
 import {postBody} from '../common/utils';
 import shelljs from 'shelljs';
-import process from 'child_process';
+const { spawn,exec,execFile } = require('child_process');
 
 export default class HomeController{
   static getHome(req, res, next){
@@ -28,8 +28,12 @@ export default class HomeController{
     //   }
     // })
 
-    shelljs.echo('hello world');
-    shelljs.cd("../")
-    
+    execFile('new_create.sh',[],function (err, stdout, stderr) {
+      if(err){
+        console.log("err",err)
+      }
+      console.log("stdout",stdout)
+      console.log("stderr",stderr)
+    });
   }
 }

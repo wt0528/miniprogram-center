@@ -1,6 +1,5 @@
 import DemandModel from '../models/demandModel';
 import OperateLogModel from '../models/operateLogModel';
-import UserModel from '../models/userModel';
 import {postBody} from '../common/utils'
 
 export default class DemandManageController{
@@ -9,6 +8,9 @@ export default class DemandManageController{
         DemandModel.find({}).exec((err, demands) =>{
             //TODO:需要增加数据库查询失败处理
             res.render('demandmanage',{demandList: demands})
+        })
+        OperateLogModel.find({}).exec((err, res) =>{
+            console.log("OperateLogModel",res)
         })
     }
 
@@ -19,18 +21,19 @@ export default class DemandManageController{
             if(err){
                 res.redirect('/submitResult?result=删除失败');
             } else{
+                //TODO 增加操作记录
                 let newLog = new OperateLogModel({
                   demandName: 'zzzz',
                   gitNum: body.selectedDemand,
-                  operateTime: new Date(),
+                  operateTime: '20200827',
                   linkUser: 'wt'
                 })
                 newLog.save((err) =>{
                   console.log("post newRecomend")
                   if(err){
-                    res.redirect('/submitResult?result=删除成功,插入日志失败');
-                  } else{
                     res.redirect('/submitResult?result=删除成功');
+                  } else{
+                    res.redirect('/submitResult?result=删除成功,插入日志失败');
                   }
                 })
             }

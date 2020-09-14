@@ -1,6 +1,4 @@
 import DemandModel from '../models/demandModel';
-import OperateLogModel from '../models/operateLogModel';
-import UserModel from '../models/userModel';
 import {postBody} from '../common/utils'
 
 export default class DemandManageController{
@@ -19,20 +17,7 @@ export default class DemandManageController{
             if(err){
                 res.redirect('/submitResult?result=删除失败');
             } else{
-                let newLog = new OperateLogModel({
-                  demandName: 'zzzz',
-                  gitNum: body.selectedDemand,
-                  operateTime: new Date(),
-                  linkUser: 'wt'
-                })
-                newLog.save((err) =>{
-                  console.log("post newRecomend")
-                  if(err){
-                    res.redirect('/submitResult?result=删除成功,插入日志失败');
-                  } else{
-                    res.redirect('/submitResult?result=删除成功');
-                  }
-                })
+                res.redirect('/submitResult?result=删除成功');
             }
         })
         

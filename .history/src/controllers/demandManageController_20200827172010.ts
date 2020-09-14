@@ -8,7 +8,22 @@ export default class DemandManageController{
     static getDemandManage(req, res, next){
         DemandModel.find({}).exec((err, demands) =>{
             //TODO:需要增加数据库查询失败处理
-            res.render('demandmanage',{demandList: demands})
+          //  res.render('demandmanage',{demandList: demands})
+        })
+
+        //测试联合查询
+        UserModel.aggregate([
+            {
+                $lookup:
+                  {
+                    from: "manageLogs",
+                    localField: "name",
+                    foreignField: "linkUser",
+                    as: "log_docs"
+                  }
+             }
+        ]).exec((err, result) => {
+            res.json(result)
         })
     }
 

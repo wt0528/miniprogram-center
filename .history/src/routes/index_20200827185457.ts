@@ -27,12 +27,9 @@ router.get('/submitResult', submitResultController.getSubmitResult);
 
 
 
-//前后端分离后test
+//前后端分离后
 router.use('/craete_demand', DemandController.createDemand)
 router.use('/build_package', BuildController.buildPackage)
-router.use('/delete_package', DemandController.deleteDemand)
-router.use('/get_active_demands', DemandController.getActiveDemand)
-router.use('/get_log_demands', DemandController.getLogDemand)
 
 
 export default router;

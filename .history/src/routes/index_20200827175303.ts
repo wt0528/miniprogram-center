@@ -4,11 +4,11 @@ import packageBuildController from '../controllers/packageBuildController';
 import demandManageController from '../controllers/demandManageController'; 
 import submitResultController from '../controllers/submitResultController'; 
 
-
-import DemandController from '../controllers/demandController'; 
-import BuildController from '../controllers/buildController'; 
-
 const router = express.Router();
+
+router.get('/', function(req, res) {
+    res.redirect('/home');
+});
 
 router.get('/home', homeController.getHome);  
 
@@ -27,12 +27,8 @@ router.get('/submitResult', submitResultController.getSubmitResult);
 
 
 
-//前后端分离后test
-router.use('/craete_demand', DemandController.createDemand)
-router.use('/build_package', BuildController.buildPackage)
-router.use('/delete_package', DemandController.deleteDemand)
-router.use('/get_active_demands', DemandController.getActiveDemand)
-router.use('/get_log_demands', DemandController.getLogDemand)
+//前后端分离后
+router.get('/craete_demand', demandController.createDemand)
 
 
 export default router;

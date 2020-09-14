@@ -1,6 +1,5 @@
-import DemandModel from '../models/demandModel';
-import {postBody} from '../common/utils';
-import process from 'child_process';
+import DemandModel from '../models/domeModel';
+import {postBody} from '../common/utils'
 
 export default class PackageBuildController{
     static getPackageBuild(req, res, next){
@@ -14,14 +13,7 @@ export default class PackageBuildController{
         let body:any = await postBody(req)
         console.log("buildBody",body)
         //TODO: 执行打包操作
-        process.exec('ls ', function(error, stdout, stderr){
-            if(error) {
-                console.error('error: ' + error);
-                return;
-            }
-            console.log('stdout: ' + stdout);
-            console.log('stderr: ' + typeof stderr);
-        });
+        
 
 
         res.redirect('/submitResult?result=打包成功');

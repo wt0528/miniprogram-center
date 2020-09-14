@@ -10,6 +10,27 @@ export default class DemandManageController{
             //TODO:需要增加数据库查询失败处理
             res.render('demandmanage',{demandList: demands})
         })
+
+
+        OperateLogModel.find({}).exec((err, demands) =>{
+            //TODO:需要增加数据库查询失败处理
+            console.log("OperateLogModel",demands)
+        })
+
+        //测试联合查询
+        UserModel.aggregate([
+            {
+                $lookup:
+                  {
+                    from: "OperateLogModel",
+                    localField: "name",
+                    foreignField: "linkUser",
+                    as: "log_docs"
+                  }
+             }
+        ]).exec((err, res) => {
+            console.log("jjjjjjjjjjjj",res)
+        })
     }
 
     static async postDemandManage(req, res, next){
